@@ -1,28 +1,23 @@
 import { resolve } from 'path';
-import { Configuration as WebpackConfiguration } from "webpack"
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
+import { Configuration, HotModuleReplacementPlugin } from "webpack"
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
-type Configuration = WebpackConfiguration & {
-	devServer?: WebpackDevServerConfiguration
-}
 
 const config: Configuration = {
   mode: 'development',
 	target: 'web',
 	externals: [],
-  entry: resolve(__dirname, 'src/client/index.tsx'),
+  entry: {
+		main: ['webpack-hot-middleware/client?reload=true','./src/client/index.tsx']
+	},
   output: {
-    path: resolve(__dirname, 'dist/client')
+    path: resolve('./dist/client')
   },
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: resolve(__dirname, 'src/client/index.ejs')
-		})
+			template: resolve('./src/client/index.ejs')
+		}),
+		new HotModuleReplacementPlugin()
 	],
-	devServer: {
-		open: true
-	},
 	module: {		
 		rules: [
 			{

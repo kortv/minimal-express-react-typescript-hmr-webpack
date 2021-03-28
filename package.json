@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "run-s clean build:all",
+    "start": "run-s clean open-browser build:all",
     "clean": "rimraf dist",
-    "build:all": "run-p build:server build:client",
+    "open-browser": "ts-node ./utils/open-browser.ts",
+    "build:all": "run-p build:server",
     "build:server": "webpack -w -c webpack.server.config.ts",
     "build:client": "webpack serve -c webpack.client.config.ts"
   },
@@ -21,7 +22,7 @@
     "@types/react-dom": "^17.0.3",
     "@types/webpack": "^5.0.0",
     "@types/webpack-dev-middleware": "^4.1.2",
-    "@types/webpack-dev-server": "^3.11.3",
+    "@types/webpack-env": "^1.16.0",
     "@types/webpack-node-externals": "^2.5.1",
     "babel-loader": "^8.2.2",
     "express": "^4.17.1",
@@ -37,7 +38,7 @@
     "webpack": "^5",
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^2.5.2"
   }
 }

@@ -1,13 +1,12 @@
 import React, { createElement, FC } from 'react'
 import ReactDOM from 'react-dom'
 
-/*if (module.hot) {
+if (module.hot) {
   module.hot.accept();
-}*/
-
-const LikeButton: FC = () => {
-    return <>{'hi'}</>
 }
 
-const domContainer = document.getElementById('root');
-ReactDOM.render(createElement(LikeButton), domContainer);
+const App: FC = () => {
+    return <>{'Hello From React!'}</>
+}
+
+ReactDOM.render(createElement(App), document.getElementById('root'));

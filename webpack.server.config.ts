@@ -1,13 +1,7 @@
 import { resolve } from 'path';
-//import { Configuration } from "webpack"
-import { Configuration as WebpackConfiguration } from "webpack"
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
+import { Configuration } from "webpack"
 import nodeExternals from 'webpack-node-externals'
 import NodemonPlugin from 'nodemon-webpack-plugin'
-
-type Configuration = WebpackConfiguration & {
-	devServer?: WebpackDevServerConfiguration
-}
 
 const config: Configuration = {
   mode: 'development',
@@ -15,13 +9,16 @@ const config: Configuration = {
 	externalsPresets: { node: true },
 	// @ts-expect-error typing conflict, may be fixed in a future patch/update
 	externals: [nodeExternals()],
-  entry: resolve(__dirname, 'src/server/index.ts'),
+  entry: resolve('./src/server/index.ts'),
   output: {
-    path: resolve(__dirname, 'dist/server')
+    path: resolve('./dist/server')
   },
 	plugins: [
 		new NodemonPlugin()		
 	],
+	resolve: {
+		extensions: ['.ts', 'tsx', '.ejs']
+	},
 	module: {		
 		rules: [
 			{
