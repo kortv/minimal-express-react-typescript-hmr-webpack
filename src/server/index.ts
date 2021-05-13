@@ -1,5 +1,6 @@
 import express from 'express'
 import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpack from 'webpack'
 import webpackClientConfiguration from './../../webpack.client.config'
 
@@ -11,12 +12,14 @@ app.use(
   webpackDevMiddleware(webpackClientCompiler, {
     //publicPath: config.output.publicPath,
   })
-);
+)
 
-app.use(require("webpack-hot-middleware")(webpackClientCompiler, {
-  //path: '/__webpack_hmr', 
-  //heartbeat: 10 * 1000
-}));
+app.use(
+  webpackHotMiddleware(qwer, webpackClientCompiler, {
+    //path: '/__webpack_hmr',
+    //heartbeat: 10 * 1000
+  })
+)
 
 const port = 3000
 
@@ -27,4 +30,3 @@ app.get('/hey', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-

@@ -1,0 +1,76 @@
+{
+  "$black": "#000000",
+  "$white": "#ffffff",
+
+  "$grey": "#F1F1F1",
+  "$semiDarkGray": "#D0D0CE",
+  "$darkGrey": "#97999B",
+  "$mainBg": "#EEEEEE",
+
+  "$orange": "#FDAB3D",
+  "$blue": "#00A3E0",
+  "$geekBlue": "#005587",
+
+  "$primary": {
+    "$regular": "#00A3E0",
+    "$hover": "#0096CE"
+  },
+
+  "$tasks": {
+    "analysisrequest": "#FDAB3D",
+    "datarequest": "#00A3E0",
+    "outputReviewRequest": "#97999B",
+    "default": "#F1F1F1",
+    "qna": "#5cd428"
+  },
+
+  "$navigation": {
+    "$navBackground": "#002140",
+    "$navChildBackground": "#001529",
+    "$navBackgroundActive": "#00A3E0"
+  },
+
+  "$iconFills": {
+    "$grayDark": "#97999B",
+    "$grayLight": "#D0D0CE",
+    "$purpleIcon": "#005587",
+    "$greenOverWhite": "#43B02A",
+    "$greenOverBlack": "#86BC25",
+    "$violet": "#7939d3"
+  },
+
+  "$accentColors": {
+    "$highlightOverWhite": "rgba(#00A3E0, 0.1)",
+    "$redError": "#E30613",
+    "$yellowWarning": "#FFCD00",
+    "$green": "#00C874",
+    "$orange": "#FDAB3D"
+  },
+
+  "$tags": {
+    "pink": "pink",
+    "red": "red",
+    "yellow": "yellow",
+    "orange": "orange",
+    "cyan": "cyan",
+    "green": "green",
+    "blue": "blue",
+    "purple": "purple",
+    "geekblue": "geekblue",
+    "magenta": "magenta",
+    "volcano": "volcano",
+    "gold": "gold",
+    "lime": "lime"
+  },
+
+  "$cards": {
+    "$red": "#FCEAE9",
+    "$darkRed": "#F5C3C0",
+    "$orange": "#FFFAE6",
+    "$darkOrange": "#FFEFB0",
+    "$green": "#F3F9EA",
+    "$darkGreen": "#D2EFA6",
+    "$blue": "#E5F5FB",
+    "$darkBlue": "#AEE0F4"
+  }
+}

@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+//   Palette
+// -----------------------------------------------------------------------------
+json('./colors.json')
+$COLORS = json('./colors.json', {hash: true})
+
+$title             ?= rgba(#000, .65)
+$inputLabel        ?= rgba(#000, .85)
+
+$grey2             ?= #74787b // borders
+$grey3             ?= #e7e7e7 // light borders
+
+$whiteGrey         ?= #F2F2F2
+
+$shadow            ?= rgba(0,21,41,.08)
+$menuDark          ?= rgb(8,33,62)
+$menuDarkBorder    ?= rgb(31,53,79)
+$hoveredRow        ?= rgb(233,246,251)
+
+$accept            ?= #00C874
+$warning           ?= $COLORS.$accentColors.$orange
+$disable           ?= $semiDarkGray
+$err               ?= #D0011B
+
+$primary           ?= var(--highlight-color)
+$primaryFade       ?= var(--highlight-fade-color)
+$primaryDark       ?= #0197CF
+$antdHover         ?= #26bfed
+$antdDisable       ?= #f5f5f5
+$engagement        ?= $geekBlue
+$lightHover        ?= #e5f5fb
+$deloitteGreen     ?= $COLORS.$iconFills.$greenOverBlack
+$darkRed           ?= #DE4C49
+
+$arGrey            ?= #97999b
+$arLightGrey       ?= #F0F0F0
+$arBlue            ?= $primary
+$arGreen           ?= #43B02A
+
+$logoText          ?= var(--logo-text-color)
+$sidebarBg         ?= var(--primary-color)

@@ -1,0 +1,315 @@
+:root {
+  --primary-color:  #002140;
+  --highlight-color: #00A3E0;
+  --highlight-fade-color: rgba(0, 163, 224, 0.1);
+  --logo-text-color: $COLORS.$iconFills.$greenOverBlack
+}
+
+columnFlexMixin()
+  display flex
+  flex-direction column
+  min-height 0
+  min-width 0
+  flex: 0 1 auto
+
+div#app
+  height 100%
+  -webkit-font-smoothing antialiased
+  font-smoothing antialiased
+
+.impacted-data
+  width 400px
+  height 30px
+  div
+    display inline-block
+    width 90px
+
+.ant-form-item-label
+  label
+    font-size font(s)
+    font-weight bolder
+    line-height line(l)
+    color: $inputLabel
+
+.ant-form-item
+  margin-bottom gutter(xs)
+
+.ant-btn,
+.ant-select-search__field__placeholder,
+.ant-select-search__field,
+.ant-pagination,
+.ant-select,
+.ant-select-dropdown,
+.ant-tabs-nav-container,
+.ant-input,
+.ant-calendar-date,
+.ant-calendar-column-header,
+.ant-calendar-my-select,
+.ant-calendar-input,
+.ant-calendar-today-btn,
+.ant-select-tree-title,
+.ant-dropdown-menu-item
+  font-size font(s) !important
+
+.ant-btn-sm
+  line-height 1
+
+.ant-input-suffix
+  z-index 1 !important
+
+.ant-dropdown-menu-submenu
+  .ant-dropdown-menu-submenu-title
+    font-size font(s) !important
+
+.ant-table-body
+  td
+    font-size font(s)
+    background $white
+
+.ant-table-thead
+  th
+    font-size font(s)
+  th > span
+    font-weight bold
+
+.ant-modal-footer
+  *
+    font-size font(s) !important
+  button
+    text-transform uppercase
+
+.ant-table-expanded-row > td
+.ant-table-expanded-row:hover > td
+  background: $grey !important
+
+.ant-modal-footer,
+.ant-modal-header
+  flex-shrink 0
+
+.ant-modal-footer
+  padding 0 24px
+
+.ant-table-small
+  border none
+
+.ant-steps .ant-steps-icon
+  line-height 2
+.ant-steps-small .ant-steps-icon
+  line-height 1.9
+
+.ant-table-thead > tr > th.ant-table-selection-column,
+.ant-table-tbody > tr > td.ant-table-selection-column
+  min-width 45px
+  width 45px
+
+.ant-select-tree li .ant-select-tree-node-content-wrapper.ant-select-tree-node-selected
+.ant-select-tree li .ant-select-tree-node-content-wrapper:hover
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected
+  background none
+
+.ant-select-tree li .ant-select-tree-node-content-wrapper.ant-select-tree-node-selected
+  opacity .2
+
+.ant-table-fixed-right
+  z-index 20
+
+.ant-dropdown
+  z-index 1030
+
+.ant-spin-nested-loading
+  columnFlexMixin()
+  > [class="ant-spin-container"]
+    columnFlexMixin()
+
+.MainFormButton
+  text-transform uppercase
+
+.MainIcon
+  width 20px
+  height @width
+  flex-shrink 0
+  fill $disable
+  transition fill .6s
+
+  &.-l
+    width 25
+    height @width
+  &.-s
+    width 17
+    height @width
+
+  &.-requested, &.-reopened, &.-warning
+    fill: $warning
+  &.-accepted, &.-provided
+    fill: $accept
+  &.-user
+    fill $disable
+  &.-clip
+    width 10px
+    height auto
+  &.-err, &.-due
+    fill $err
+  &.-link, &.-primary
+    fill $primary
+  &.-dueSoon, &.-warning
+    fill $warning
+
+  &.-mLeft
+    margin-left gutter(s)
+  &.-mRight
+    margin-right gutter(s)
+  &.-pointer
+    cursor pointer
+  &.-primaryHover
+    &:hover
+      fill $primary
+      color $primary
+      opacity .5
+
+.NavText
+  &.-link
+    display flex
+    align-items center
+    color $primary
+    > span
+      margin-left gutter(xs)
+    svg
+      font-size 14px !important
+      width 14px
+      height @width
+      fill $primary !important
+
+  &.-withSuffix
+    max-width 180px
+    padding-right gutter(l)
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+    &-suffix
+      display none
+      position absolute
+      right gutter()
+      bottom 0
+      top 0
+      margin auto
+      fill rgba(255, 255, 255, 0.65) !important
+
+      &:hover
+        fill $white !important
+
+.NavIcon
+  flex-shrink 0
+  font-size 18px !important
+  width 18px
+  height @width
+  fill rgba(255, 255, 255, 0.4)
+  transition fill .3s !important
+
+  &.-s
+    font-size 14px !important
+    width 14px
+    height @width
+
+.FunctionToToolsModalModalBody, .DSAddEditMetadataModalBody
+  .AntdCusomModal
+    .ant-modal-content
+      padding 0
+      .ant-modal-body
+        padding 0
+
+.AntdTabsFlex
+  columnFlexMixin()
+  [class="ant-tabs-content ant-tabs-content-no-animated"]
+    columnFlexMixin()
+    [class="ant-tabs-tabpane ant-tabs-tabpane-active"]
+      columnFlexMixin()
+      flex-shrink 1 !important
+  [class=" ant-tabs-tab"]
+    height 31px
+  &.-unset
+    overflow unset
+  &.-main
+    flex 1
+    [class="ant-tabs-content ant-tabs-content-no-animated"]
+      flex 1
+      [class="ant-tabs-tabpane ant-tabs-tabpane-active"]
+        flex 1
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub
+  color rgba(255, 255, 255, 0.4) !important
+.ant-menu-dark .ant-menu-item > a
+.ant-menu-dark .ant-menu-submenu-title > a
+  color rgba(255, 255, 255, 0.4)
+.ant-menu-dark .ant-menu-item
+  color rgba(255, 255, 255, 0.4)
+.ant-menu-dark .ant-menu-item-selected > a
+  color white !important
+
+[class="ant-menu ant-menu-sub ant-menu-vertical"],
+[class="ant-menu  ant-menu-sub ant-menu-vertical ant-menu-hidden"],
+[class="ant-menu ant-menu-sub ant-menu-vertical zoom-big-enter"],
+[class="ant-menu ant-menu-sub ant-menu-vertical zoom-big-enter zoom-big-enter-active"],
+[class="ant-menu ant-menu-sub ant-menu-vertical zoom-big-leave"],
+[class="ant-menu ant-menu-sub ant-menu-vertical zoom-big-leave zoom-big-leave-active"]
+  max-height 320px !important
+  overflow-y auto
+  [class="ant-menu-item ant-menu-item-selected"],
+  [class="ant-menu-item ant-menu-item-active ant-menu-item-selected"]
+    svg
+      display block !important
+
+.ant-notification
+  z-index 10001
+
+// GrapeCity scrollbar style
+.GCSpreadSheet
+  .gc-scroll-bar
+    background none
+    border-color #a3b9d1
+    &.gc-scrollbar-stateHover
+      background #9bb6dd2e
+    &.gc-scrollbar-stateActive
+      background #9bb6dd57
+
+.view-only
+  .ant-select-selection,
+  .ant-input
+    background $grey !important
+    pointer-events none
+    opacity 0.65
+  .EDRUTransferConnection-hidden,
+  .CustomFilterTable-hidden,
+  .ConditionsMenu-hidden,
+  .EDRUAddBundles-hidden,
+  .EditRowThreeDots-icon,
+  .EDRUDataSource-hidden,
+  .EDRUBBFields-hidden,
+  .EDRUBBHeader-hidden,
+  .EDRUSchedule-hidden,
+  .EDRUSaveDr-hidden
+    display none !important
+
+#adalIdTokenFrame // has size 4x4, adding scroll
+  display none
+
+.-im-modal
+  [class="ant-modal-content"]
+    flex 1
+    display flex
+    flex-direction column
+    overflow hidden
+  [class="ant-modal-body"]
+    flex 1
+    display flex
+    overflow auto
+    padding-top 0 !important
+  [class="ant-modal-header"]
+    flex-shrink 0
+    border-bottom none
+  [class="ant-modal-close-x"]
+    display flex
+    align-items center
+    justify-content center
+
+.Row
+  margin-bottom 24px

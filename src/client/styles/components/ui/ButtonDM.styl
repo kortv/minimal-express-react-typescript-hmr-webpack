@@ -1,0 +1,241 @@
+_fontSize = 14px
+_iconSize = 16px
+_defaultBg = #dbdbdb
+_defaultColor = $main
+
+$first ?= $blue
+$second ?= $gray
+$third ?= $green
+$fourth ?= $blue
+
+$green ?= #86bc25
+$lightGreen ?= #B2D97B
+
+$firstDim ?= $lightBlue
+$secondDim ?= $lightGray
+$thirdDim ?= $lightBlue
+$fourthDim ?= $whiteGray //$lightTeal
+
+$gray ?= #63666A
+
+// backgrounds
+$lightGray ?= #F9F9F9
+$lightGray2 ?= #eee
+$lightGray3 ?= #d8d8d8
+
+// Same colors on dark background
+$darkFirst ?= lighten($first, 40%)
+$darkSecond ?= lighten($gray, 20%)
+$darkThird ?= $darkFirst
+
+$blue ?= $primary
+$lightBlue ?= #c6efff //#d9f1fb
+
+$main ?= rgba($black, 0.6)
+
+_reset()
+  appearance none
+  text-decoration none
+  border none
+
+_center()
+  display inline-flex
+  justify-content center
+  align-items center
+
+// Variants
+
+_default()
+  background-color _defaultBg
+  color _defaultColor
+  &:hover
+    background-color lighten(_defaultBg, 20%)
+
+_primary()
+  background-color $first
+  color white
+  &:hover
+    background-color lighten($first, 20%)
+  svg
+    fill white
+
+_important()
+  background-color $third
+  color white
+  &:hover
+    background-color lighten($third, 10%)
+  svg
+    fill white
+
+_disabled()
+  background-color lighten($secondDim, 40%)
+  color darken($main, 40%)
+  &:hover
+    background-color lighten($secondDim, 40%)
+  svg
+    fill darken($main, 40%)
+
+_primaryDisabled()
+  background-color lighten($firstDim, 40%)
+  color rgba(white, 0.8)
+  &:hover
+    background-color lighten($firstDim, 40%)
+  svg
+    fill rgba(white, 0.8)
+
+_flat()
+  background-color transparent
+  color $second
+  &:hover
+    background-color lighten($second, 70%)
+  svg
+    fill $second
+
+_flatPrimary()
+  background-color transparent
+  color $first
+  svg
+    fill $first
+  &.-dark
+    color $darkThird
+    svg
+      fill $darkThird
+  &:hover
+    background-color lighten($first, 70%)
+
+_flatDisabled()
+  background-color transparent
+  color lighten($second, 30%)
+  &:hover
+    background-color transparent
+  svg
+    fill lighten($second, 30%)
+
+_flatPrimaryDisabled()
+  background-color transparent
+  color lighten($first, 30%)
+  &:hover
+    background-color transparent
+  svg
+    fill lighten($first, 30%)
+
+_border()
+  _flat()
+  _addBorder($second)
+
+_borderPrimary()
+  _flatPrimary()
+  _addBorder($first)
+
+_borderDisabled()
+  _flatDisabled()
+  _addBorder(lighten($second, 30%))
+
+_borderPrimaryDisabled()
+  _flatPrimaryDisabled()
+  _addBorder(lighten($first, 30%))
+
+_addBorder(color)
+  box-shadow inset 0 0 0 1px color
+
+_smallPadding()
+  padding-left gutter(s)
+  padding-right gutter(s)
+
+_hideText()
+  font-size 0
+
+_restoreText()
+  font-size _fontSize
+
+_mirrorHorizontally()
+  transform scaleX(-1)
+
+_wider()
+  padding-left gutter(xl)
+  padding-right @padding-left
+
+// Main
+
+.root
+  _reset()
+  &:not(button)
+    _center()
+  position relative
+  padding 6px 20px
+  text-transform uppercase
+  cursor pointer
+  font-size _fontSize
+  font-weight 600
+  border-radius 4px
+  line-height line(s)
+  transition color 0.2s, background-color 0.2s
+  outline none
+  flex-shrink 0
+  &:hover
+    background-image linear-gradient(to left, rgba(white, 0.2), rgba(white, 0.2))
+  &:active
+    transform translateY(1px)
+  _default()
+
+  &.-icon
+    display inline-flex
+    align-items center
+    padding-left 10px
+    svg
+      width _iconSize
+      height _iconSize
+      margin-right 8px
+
+  &.-primary
+    _primary()
+
+  &.-important
+    _important()
+
+  &[disabled], &.-disabled
+    _disabled()
+    cursor not-allowed
+    &.-primary
+      _primaryDisabled()
+
+  &.-flat
+    _flat()
+
+    &.-primary
+      _flatPrimary()
+
+      &[disabled], &.-disabled
+        _flatPrimaryDisabled()
+
+    &[disabled], &.-disabled
+      _flatDisabled()
+
+  &.-border
+    _border()
+
+    &.-primary
+      _borderPrimary()
+
+      &[disabled], &.-disabled
+        _borderPrimaryDisabled()
+
+    &[disabled], &.-disabled
+      _borderDisabled()
+
+  &.-small
+    _smallPadding()
+    font-size font(xs)
+
+  &.-wider
+    _wider()
+
+// When data-compact is specified without any value or 'desktop',
+// treat it as the default style
+  &[data-compact='data-compact'], &[data-compact='true'], &[data-compact=''], &[data-compact='desktop']
+    _smallPadding()
+  &[data-mirror='data-mirror'], &[data-mirror='true'], &[data-mirror=''], &[data-mirror='desktop']
+    _mirrorHorizontally()
+
+.root + .root
+  margin-left 5px

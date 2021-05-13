@@ -1,0 +1,94 @@
+.index
+  background-color: black
+  /* webpackIgnore: true */
+  background-image: url('/img/landing_page.jpg');
+  background-position: center;
+  background-size: contain;
+  color: white
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column;
+  font-size: 16px
+  letter-spacing: 0.5px
+
+.terms
+  &:hover
+    text-decoration underline
+    cursor pointer
+
+.top
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px
+
+.footer-text
+  margin-top 20px
+  font-size 11px
+
+.logo
+  img
+    height 40px
+
+.button
+  border: 2px solid white
+  border-radius: 25px
+  height 50px
+  width 150px
+  display: flex;
+  align-items: center
+  justify-content: center;
+  font-size: 18px
+  cursor: pointer;
+  &:hover
+    background-color: white
+    color: black
+
+.content
+  flex 1
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px
+
+.title
+  font-size: 60px
+  letter-spacing: 1px
+
+.subtitle
+  color: #87BA34
+  font-size: 28px
+  letter-spacing: 0.5px
+
+.list
+  margin: 50px 30px
+
+.listItem
+  position: relative;
+  margin-top: 5px
+  &:before
+    content: '.'
+    width: 8px
+    height: 8px
+    background-color: #87BA34
+    color: #87BA34
+    overflow: hidden;
+    display: block
+    position: absolute;
+    left -30px
+    top 8px
+    border-radius: 50%
+
+
+.bottom
+  padding: 30px
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+.bleft
+  font-size 11px
+  a
+    color: white;
+    text-decoration: underline;
